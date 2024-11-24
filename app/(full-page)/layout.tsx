@@ -7,15 +7,15 @@ interface SimpleLayoutProps {
 }
 
 export const metadata: Metadata = {
-    title: 'PrimeReact Sakai',
-    description: 'The ultimate collection of design-agnostic, flexible and accessible React UI Components.'
+    title: 'Flair Health',
+    description: 'Flair Health is a virtual extension for medical practices, providing high-touch nutrition and health coaching services to patients with chronic conditions'
 };
 
 export default function SimpleLayout({ children }: SimpleLayoutProps) {
     return (
         <React.Fragment>
             {children}
-            <AppConfig simple />
+            {/* <AppConfig simple /> */}
         </React.Fragment>
     );
 }

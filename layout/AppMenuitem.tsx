@@ -35,12 +35,10 @@ const AppMenuitem = (props: AppMenuItemProps) => {
             return;
         }
 
-        //execute command
         if (item!.command) {
             item!.command({ originalEvent: event, item: item });
         }
 
-        // toggle active state
         if (item!.items) setActiveMenu(active ? (props.parentKey as string) : key);
         else setActiveMenu(key);
     };
@@ -60,8 +58,8 @@ const AppMenuitem = (props: AppMenuItemProps) => {
             {props.root && item!.visible !== false && <div className="layout-menuitem-root-text">{item!.label}</div>}
             {(!item!.to || item!.items) && item!.visible !== false ? (
                 <a href={item!.url} onClick={(e) => itemClick(e)} className={classNames(item!.class, 'p-ripple')} target={item!.target} tabIndex={0}>
-                    <i className={classNames('layout-menuitem-icon', item!.icon)}></i>
-                    <span className="layout-menuitem-text">{item!.label}</span>
+                    <i style={{ color: '#20abdc', fontSize: '26px' }} className={classNames('layout-menuitem-icon', item!.icon)}></i>
+                    <span style={{ color: '#20abdc' }} className="layout-menuitem-text">{item!.label}</span>
                     {item!.items && <i className="pi pi-fw pi-angle-down layout-submenu-toggler"></i>}
                     <Ripple />
                 </a>
@@ -69,8 +67,8 @@ const AppMenuitem = (props: AppMenuItemProps) => {
 
             {item!.to && !item!.items && item!.visible !== false ? (
                 <Link href={item!.to} replace={item!.replaceUrl} target={item!.target} onClick={(e) => itemClick(e)} className={classNames(item!.class, 'p-ripple', { 'active-route': isActiveRoute })} tabIndex={0}>
-                    <i className={classNames('layout-menuitem-icon', item!.icon)}></i>
-                    <span className="layout-menuitem-text">{item!.label}</span>
+                    <i style={{ color: '#292929', fontSize: '26px' }} className={classNames('layout-menuitem-icon', item!.icon)}></i>
+                    <span style={{ color: '#292929' }} className="layout-menuitem-text">{item!.label}</span>
                     {item!.items && <i className="pi pi-fw pi-angle-down layout-submenu-toggler"></i>}
                     <Ripple />
                 </Link>
